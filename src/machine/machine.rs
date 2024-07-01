@@ -9,6 +9,9 @@ pub struct Machine {
 
 impl Machine {
     pub fn new() -> Machine {
-        Machine { memory: Memory::new(), register_set: RegisterSet::new() }
+        Machine {
+            memory: Memory::new(),
+            register_set: RegisterSet::new(),
+        }
     }
 }

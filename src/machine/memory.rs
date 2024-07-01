@@ -6,7 +6,9 @@ pub struct Memory {
 /// Bit Numbering format: right to left -> 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
 impl Memory {
     pub fn new() -> Memory {
-        Memory { data: vec![0; 0x10000] }
+        Memory {
+            data: vec![0; 0x10000],
+        }
     }
 
     pub fn read(&self, address: u16) -> u16 {

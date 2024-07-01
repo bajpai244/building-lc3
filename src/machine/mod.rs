@@ -1,3 +1,3 @@
-pub mod registers;
-pub mod memory;
 pub mod machine;
+pub mod memory;
+pub mod registers;

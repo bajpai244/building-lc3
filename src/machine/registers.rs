@@ -1,4 +1,3 @@
-
 pub enum GeneralPurposeRegister {
     R0, // 000
     R1, // 001
@@ -7,7 +6,7 @@ pub enum GeneralPurposeRegister {
     R4, // 100
     R5, // 101
     R6, // 110
-    R7 // 111
+    R7, // 111
 }
 
 impl GeneralPurposeRegister {
@@ -21,23 +20,22 @@ impl GeneralPurposeRegister {
             5 => GeneralPurposeRegister::R5,
             6 => GeneralPurposeRegister::R6,
             7 => GeneralPurposeRegister::R7,
-            _ => panic!("Invalid value for GeneralPurposeRegister")
+            _ => panic!("Invalid value for GeneralPurposeRegister"),
         }
     }
 }
 
 pub struct RegisterSet {
-   general_purpose: [u16; 8],
-   program_counter: u16,
-   // CC: N Z P, i.e CC[0] = N, CC[1] = Z, CC[2] = P
-   condition_codes: [u8; 3],
-   // contains the status of the current process being executed
-   // PSR[15] = privelege mode, PSR[15] = 0 Supervisor, PSR[15] = 1 User
-   // PSR[10:8] = priority level, PSR[2:0] = condition codes
-   // PSR[2] = N, PSR[1] = Z, and PSR[0] = P.
-   process_status: u16
+    general_purpose: [u16; 8],
+    program_counter: u16,
+    // CC: N Z P, i.e CC[0] = N, CC[1] = Z, CC[2] = P
+    condition_codes: [u8; 3],
+    // contains the status of the current process being executed
+    // PSR[15] = privelege mode, PSR[15] = 0 Supervisor, PSR[15] = 1 User
+    // PSR[10:8] = priority level, PSR[2:0] = condition codes
+    // PSR[2] = N, PSR[1] = Z, and PSR[0] = P.
+    process_status: u16,
 }
-
 
 impl RegisterSet {
     pub fn new() -> RegisterSet {
@@ -45,7 +43,7 @@ impl RegisterSet {
             general_purpose: [0; 8],
             program_counter: 0,
             condition_codes: [0; 3],
-            process_status: 0
+            process_status: 0,
         }
     }
 
